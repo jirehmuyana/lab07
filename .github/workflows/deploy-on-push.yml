@@ -10,10 +10,10 @@ jobs:
             - name: copy file to server
               uses: appleboy/scp-action@master
               with:
-                HOST: 54.167.97.201
-                SSH_USER_NAME: ubuntu
-                SSH_PORT: 22
-                SSH_KEY: -----BEGIN RSA PRIVATE KEY-----
+                host: 54.167.97.201
+                username: ubuntu
+                port: 22
+                key: -----BEGIN RSA PRIVATE KEY-----
                     MIIEowIBAAKCAQEAx5W4Ajiaeq6LQG94GtDkcCEajQkTNjFEAw2qFpXePPKy3VNr
                     C/a3tlxCrMEkKulOJaBA610uotOD4onvhgAQnFTsxd7cdQCu+TKfYdevn+QmNTnZ
                     ry8ASbEOlMB2aGaTawZus270XQuyIZp9MF7MoXdmd3rIpFg1EvKEose0XKuEGPTY
