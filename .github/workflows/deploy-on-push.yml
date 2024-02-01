@@ -1,9 +1,16 @@
 name: deploy on push
-on: [push]
+on:
+    push:
+        branches:
+            - main
 
 jobs:
     deploy-app:
         runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [20.x]
+
         steps:
             - name: check out the code to build server
               uses: actions/checkout@v3
