@@ -1,5 +1,9 @@
 name: deploy on push
-on: [push]
+
+on:
+    push:
+        branches:
+            -main
 
 jobs:
     deploy-app:
@@ -8,38 +12,39 @@ jobs:
             - name: check out the code to build server
               uses: actions/checkout@v3
             - name: copy file to server
-              uses: app;eboy/scp-action@master
+              uses: appleboy/scp-action@master
               with:
                 HOST: 54.167.97.201
                 SSH_USER_NAME: ubuntu
                 SSH_PORT: 22
-                SSH_KEY: -----BEGIN RSA PRIVATE KEY-----
-                    MIIEowIBAAKCAQEAx5W4Ajiaeq6LQG94GtDkcCEajQkTNjFEAw2qFpXePPKy3VNr
-                    C/a3tlxCrMEkKulOJaBA610uotOD4onvhgAQnFTsxd7cdQCu+TKfYdevn+QmNTnZ
-                    ry8ASbEOlMB2aGaTawZus270XQuyIZp9MF7MoXdmd3rIpFg1EvKEose0XKuEGPTY
-                    8lt2br6EGoQaH1NZYO6MuPR0KKiM2KDxWvZNicptJ9JHHXlEaMPwlHCLMn0gGJRb
-                    jdU+fzOuoTTWbdcz/PF0trL8AZvqYQ7Vqo6dIgc3yKToEjIiCohc8Wn9tJ1qNL/z
-                    u7wTW1joka5nEaCOAhPSZAvEU0U/6HLXayeZ1QIDAQABAoIBAFNhHe13njnQf4Zc
-                    yy1QxY5+lewDtY33SPWJmNw0ohKOReEmv1rRKHC73HL1gVmX/DjF2Tk6xYfqm3dh
-                    rropfscAx6Xmc+1BatfaqTEj/U/r7XZhA6snFJS0rmXAffchm0aj+k1l9hqFD1bw
-                    hopVoGF4U0to9TeLTijrPjQPAC+SDjPG31TRSYeGJyt4EpJqLEdjJdMM0CYX/ZcL
-                    LziwB4eoVdfb5+ea3zUoGijkOaNfw7PqFxsMaQyDzVQHu0bMRclvQm9uHBk80owb
-                    IiTzG6SoKzEXs2dvBJz3aSpVJ/iEr7pvScYz8psn5wjjeru+xLYAOeTaAbGRzqCD
-                    FZ1qsOUCgYEA+LvlkI3q+5SCbXMSymlHW4vJ2ezTuLmPg+5/f55SsLnD28cY11dp
-                    o49MToG4l6kFyc+4B0TNcoZoE7ApiimnT8lrykE8U22Xwtd/LKHmjcskv/VRmTmE
-                    idjwFOdHxaOSqNJJ4KKa5+Cv35+KpbrIRqdQjUIi+30AuQQr5I8nWIMCgYEAzWpF
-                    WEWdf33xCXuuZ8iNp3DIh/17VYRvCCgphTlU2n++7lrO2dG5Dmfn5fvhtr7aKxSH
-                    g1phMYQdfJeglxdgKUPKha2M6p2Z2CUrtDdGPdmCVvnGSuFx1jRhiNkzbhE0RKRc
-                    i+htQ4lMSchGHIx0UgtEh1TU5DfqtO3kUjyFRMcCgYEAy+8akEObhvvDWEOCA4z/
-                    4ZIiRFgFWy5g+bXAuXywpY8Zg4eg2WYlCeJCmReIpmgBg+6YHvWNULnceU/1Lv9p
-                    22P0yZZlBK4VQL342jo/0r/c+LoFVhCvl2nTpf/ee6/aXipUQiZvxXAWIs4nGiyj
-                    ajJiO/8euX1K62b9Kd8pTksCgYBVkt4MpgO05xyRHMtNRQluJdgEfx7wQ1mWBlU1
-                    wOqOlAVQetgNegcj7zl2X/ZqERwGMmk52V8AJ8+45dnq17whtLIb+m7oFnvOxb1t
-                    OFG01nYsEaX/7+dimzO+tO1t/xDNP8OmLU/HgN0dJ6e9oO2ceEE2N6rw4DKQ6UHi
-                    2H+UZQKBgADdWvhNM6R1EZg/wE24GGHK2N7PrWMkdsy9bdSNNZ5Kh/IBV2vsVuEm
-                    KwO2Q3snJdAZopIoFsAr31NtCjpBvz4vE9VP+ipbj/7r/Iv4itpZ2u/0cZ67AV0K
-                    C9KfKobL9I+lqsFqLIWvOEF4MHvcaR/T6ZSBpMI/hENwEcp2t6zH
-                    -----END RSA PRIVATE KEY-----
+                SSH_KEY: 
+                    -----BEGIN RSA PRIVATE KEY-----
+                        MIIEowIBAAKCAQEAx5W4Ajiaeq6LQG94GtDkcCEajQkTNjFEAw2qFpXePPKy3VNr
+                        C/a3tlxCrMEkKulOJaBA610uotOD4onvhgAQnFTsxd7cdQCu+TKfYdevn+QmNTnZ
+                        ry8ASbEOlMB2aGaTawZus270XQuyIZp9MF7MoXdmd3rIpFg1EvKEose0XKuEGPTY
+                        8lt2br6EGoQaH1NZYO6MuPR0KKiM2KDxWvZNicptJ9JHHXlEaMPwlHCLMn0gGJRb
+                        jdU+fzOuoTTWbdcz/PF0trL8AZvqYQ7Vqo6dIgc3yKToEjIiCohc8Wn9tJ1qNL/z
+                        u7wTW1joka5nEaCOAhPSZAvEU0U/6HLXayeZ1QIDAQABAoIBAFNhHe13njnQf4Zc
+                        yy1QxY5+lewDtY33SPWJmNw0ohKOReEmv1rRKHC73HL1gVmX/DjF2Tk6xYfqm3dh
+                        rropfscAx6Xmc+1BatfaqTEj/U/r7XZhA6snFJS0rmXAffchm0aj+k1l9hqFD1bw
+                        hopVoGF4U0to9TeLTijrPjQPAC+SDjPG31TRSYeGJyt4EpJqLEdjJdMM0CYX/ZcL
+                        LziwB4eoVdfb5+ea3zUoGijkOaNfw7PqFxsMaQyDzVQHu0bMRclvQm9uHBk80owb
+                        IiTzG6SoKzEXs2dvBJz3aSpVJ/iEr7pvScYz8psn5wjjeru+xLYAOeTaAbGRzqCD
+                        FZ1qsOUCgYEA+LvlkI3q+5SCbXMSymlHW4vJ2ezTuLmPg+5/f55SsLnD28cY11dp
+                        o49MToG4l6kFyc+4B0TNcoZoE7ApiimnT8lrykE8U22Xwtd/LKHmjcskv/VRmTmE
+                        idjwFOdHxaOSqNJJ4KKa5+Cv35+KpbrIRqdQjUIi+30AuQQr5I8nWIMCgYEAzWpF
+                        WEWdf33xCXuuZ8iNp3DIh/17VYRvCCgphTlU2n++7lrO2dG5Dmfn5fvhtr7aKxSH
+                        g1phMYQdfJeglxdgKUPKha2M6p2Z2CUrtDdGPdmCVvnGSuFx1jRhiNkzbhE0RKRc
+                        i+htQ4lMSchGHIx0UgtEh1TU5DfqtO3kUjyFRMcCgYEAy+8akEObhvvDWEOCA4z/
+                        4ZIiRFgFWy5g+bXAuXywpY8Zg4eg2WYlCeJCmReIpmgBg+6YHvWNULnceU/1Lv9p
+                        22P0yZZlBK4VQL342jo/0r/c+LoFVhCvl2nTpf/ee6/aXipUQiZvxXAWIs4nGiyj
+                        ajJiO/8euX1K62b9Kd8pTksCgYBVkt4MpgO05xyRHMtNRQluJdgEfx7wQ1mWBlU1
+                        wOqOlAVQetgNegcj7zl2X/ZqERwGMmk52V8AJ8+45dnq17whtLIb+m7oFnvOxb1t
+                        OFG01nYsEaX/7+dimzO+tO1t/xDNP8OmLU/HgN0dJ6e9oO2ceEE2N6rw4DKQ6UHi
+                        2H+UZQKBgADdWvhNM6R1EZg/wE24GGHK2N7PrWMkdsy9bdSNNZ5Kh/IBV2vsVuEm
+                        KwO2Q3snJdAZopIoFsAr31NtCjpBvz4vE9VP+ipbj/7r/Iv4itpZ2u/0cZ67AV0K
+                        C9KfKobL9I+lqsFqLIWvOEF4MHvcaR/T6ZSBpMI/hENwEcp2t6zH
+                        -----END RSA PRIVATE KEY-----
                 source: "./html/*"
                 target: "/var/www/html"
                 strip_components: 1
